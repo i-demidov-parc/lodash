@@ -1,0 +1,33 @@
+define(['../internal/baseValues', './keys'], function(baseValues, keys) {
+
+  /**
+   * Creates an array of the own enumerable property values of `object`.
+   *
+   * **Note:** Non-object values are coerced to objects.
+   *
+   * @static
+   * @memberOf _
+   * @category Object
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property values.
+   * @example
+   *
+   * function Shape(x, y) {
+   *   this.x = x;
+   *   this.y = y;
+   * }
+   *
+   * Shape.prototype.z = 0;
+   *
+   * _.values(new Shape(2, 1));
+   * // => [2, 1] (iteration order is not guaranteed)
+   *
+   * _.values('hi');
+   * // => ['h', 'i']
+   */
+  function values(object) {
+    return baseValues(object, keys(object));
+  }
+
+  return values;
+});
